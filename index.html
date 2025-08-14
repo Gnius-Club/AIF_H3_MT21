@@ -1,24 +1,302 @@
-<!-- 
-HTML Template for Missions, delete and replace with mission HTML
--->
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Gnius Club</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playbook — 3º Preparatoria — Misión M21: ¡A Producción! Despliegue en la Web</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-
 <body>
-  <h1>
-    Playbook HTML Placeholder Template
-  </h1>
-  <p>
-    Replace with actual playbook code.
-  </p>
+  <header>
+    <h1><span class="book-icon">📋</span> <strong>Playbook Misión M21: ¡A Producción! Despliegue en la Web</strong></h1>
+    <div class="header-widgets">
+      <div class="timer-container">
+        <span id="timer">⏱️ 00:00</span>
+        <button id="startStop">Start</button>
+        <button id="reset">Reset</button>
+      </div>
+      <div class="theme-toggle">
+        <i class="fas fa-sun"></i>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle-input">
+          <span class="slider round"></span>
+        </label>
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+  </header>
+  <div class="main-container">
+    <aside class="activity-list">
+      <h2>Actividades</h2>
+      <ul>
+        <li><a href="#activity-0">📝</a></li>
+        <li><a href="#activity-1">1</a></li>
+        <li><a href="#activity-2">2</a></li>
+        <li><a href="#activity-3">3</a></li>
+        <li><a href="#activity-4">4</a></li>
+        <li><a href="#activity-5">5</a></li>
+      </ul>
+      <div class="sidebar-info">
+        <p>💡 Esta misión se enfoca en el despliegue de software para hacerlo público.</p>
+        <p>⏱️ Se proporcionan estimaciones de tiempo para cada actividad para ayudarle a mantener el rumbo.</p>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      <button id="toggle-dialogues">Mostrar todos los diálogos</button>
+
+      <!-- 0) De un Vistazo -->
+      <section class="activity-card" id="activity-0">
+        <h2 class="activity-title">📝 De un Vistazo: Misión M21: ¡A Producción! Despliegue en la Web</h2>
+        <p class="activity-purpose">Resumen de objetivos, secuencia y entregables.</p>
+        <div class="overview-table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 50%;">Objetivos, Tácticas y Entregable</th>
+                <th style="width: 50%;">Materiales Específicos y Preparación Previa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <h3>Objetivos e “I Can”</h3>
+                  <ul>
+                    <li>Puedo explicar las opciones de despliegue de software (frontend y backend) y su importancia para la accesibilidad global.</li>
+                    <li>Puedo desplegar una aplicación web funcional en una plataforma pública, gestionando variables de entorno y asegurando su accesibilidad.</li>
+                  </ul>
+                  <h3>Secuencia y tiempos</h3>
+                  <ol>
+                    <li>Saludo Interactivo con IA — 3 min</li>
+                    <li>“I Can” + Desafío — 5–7 min</li>
+                    <li>AI GYM — 10–12 min</li>
+                    <li>Brain Spark — 17–20 min</li>
+                    <li>GNIUS STORM — 5 min</li>
+                  </ol>
+                  <h3>Entregable del Micro-Proyecto</h3>
+                  <ul>
+                    <li>URL pública de una aplicación o página de perfil simple desplegada en vivo (componente frontend, proyecto full-stack simulado, o portafolio).</li>
+                    <li>Material de proceso (ej. código QR a la URL, anuncio de lanzamiento, guía paso a paso del despliegue).</li>
+                  </ul>
+                </td>
+                <td>
+                  <h3>Criterios de calidad</h3>
+                  <ul>
+                    <li>Accesibilidad pública de la URL.</li>
+                    <li>Funcionalidad básica del contenido desplegado.</li>
+                    <li>Uso adecuado de la plataforma de despliegue (GitHub Pages, Replit, Bolt.new).</li>
+                    <li>Consideración de seguridad (variables de entorno no expuestas).</li>
+                    <li>Claridad en la documentación del proceso de despliegue.</li>
+                  </ul>
+                  <h3>Materiales y preparación</h3>
+                  <ul>
+                    <li>Proyector e internet</li>
+                    <li>GitHub Pages / Replit / Bolt.new (o similar)</li>
+                    <li>Repositorio de código (frontend o full-stack) listo para desplegar.</li>
+                    <li>Ejemplo mínimo listo de URL pública desplegada.</li>
+                  </ul>
+                  <h3>Preparación previa</h3>
+                  <ol>
+                    <li>Verificar acceso y funcionalidad de las plataformas de despliegue.</li>
+                    <li>Tener un proyecto de ejemplo listo para una demostración rápida.</li>
+                    <li>Asegurar que los estudiantes tengan cuentas en las plataformas relevantes o acceso a repositorios.</li>
+                  </ol>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 1) Saludo Interactivo con IA -->
+      <section class="activity-card" id="activity-1">
+        <h2 class="activity-title">Saludo Interactivo con IA</h2>
+        <p class="activity-purpose">Enmarcar el foco en el despliegue de software y activar a Xolo con perfil/intereses.</p>
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 1 — Bienvenida y foco</h3>
+              <p class="step-instructions">Proyectar Diapositiva 2. Presenta el tema y su valor profesional (Columna 1).</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Equipo: hoy llevaremos nuestros proyectos al mundo real. La misión es el despliegue: hacer que su trabajo sea público y accesible. Esto es crucial para la visibilidad y el impacto de cualquier aplicación de IA o full-stack.</p>
+              </div>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 2 — Activación con Xolo</h3>
+              <p class="step-instructions">Cada estudiante envía a Xolo: “Hola Xolo, soy [Nombre], perfil [X]; me interesa [Y]. Misión M21: ¡A Producción! Despliegue en la Web. Necesito foco en [marco/herramienta].”</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Activen a Xolo con su perfil e intereses. Confirmen que comprendieron el criterio de hoy y sigan sus indicaciones personalizadas, enfocándose en la importancia del despliegue y las plataformas como GitHub Pages o Replit.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2) “I Can” + Desafío -->
+      <section class="activity-card" id="activity-2">
+        <h2 class="activity-title">“I Can Statement” + Desafío</h2>
+        <p class="activity-purpose">Alinear expectativas y definir el reto práctico de hacer un proyecto accesible globalmente.</p>
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 1 — Presenta el reto</h3>
+              <p class="step-instructions">Proyectar Diapositiva 3. Describe el reto y la meta observable (Columnas 1 y 3).</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">El reto es convertir su proyecto en una URL pública. Evaluaremos la accesibilidad, funcionalidad y la correcta aplicación de las prácticas de despliegue.</p>
+              </div>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 2 — Escribe tu “I Can”</h3>
+              <p class="step-instructions">Proyectar Diapositiva 4. Cada estudiante redacta 1 “I Can” alineado al entregable (Columna 2).</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Formula tu “Puedo…” en 1 frase: acción + criterio + resultado. Ej.: “Puedo desplegar [mi proyecto] usando [GitHub Pages/Replit] para lograr [una URL pública funcional].”</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3) AI GYM -->
+      <section class="activity-card" id="activity-3">
+        <h2 class="activity-title">AI GYM</h2>
+        <p class="activity-purpose">Formalizar el marco/técnica/herramienta central de la sesión: el despliegue de software.</p>
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 1 — Marco del día</h3>
+              <p class="step-instructions">Proyectar Diapositiva 5. Introduce el marco: Despliegue de Software (GitHub Pages, Replit, Bolt.new).</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Hoy nos enfocamos en el despliegue, el último paso para que su proyecto sea visible. Eviten errores como exponer claves de API en el código público o no configurar un proceso de 'build' adecuado. Usen las plataformas de despliegue para validar resultados.</p>
+              </div>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 2 — Mini-demostración</h3>
+              <p class="step-instructions">Proyectar Diapositiva 6. Construye un ejemplo mínimo de despliegue de una aplicación simple.</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Observa cómo un proyecto simple pasa de ser local a una URL pública. Verifiquen con: ¿Es accesible desde cualquier dispositivo? ¿Funciona como se espera?</p>
+              </div>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 3 — Check rápido</h3>
+              <p class="step-instructions">Proyectar Diapositiva 7. Verifica comprensión con 2 preguntas breves.</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Pregunta 1: ¿Por qué es importante el despliegue? Pregunta 2: Menciona una plataforma de despliegue para frontend y una para backend.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4) Brain Spark -->
+      <section class="activity-card" id="activity-4">
+        <h2 class="activity-title">Brain Spark</h2>
+        <p class="activity-purpose">Producir el entregable tangible del Micro-Proyecto: la URL pública de un proyecto.</p>
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 1 — Producción</h3>
+              <p class="step-instructions">Proyectar Diapositiva 8. Indica el producto específico (URL pública de una aplicación o página de perfil simple desplegada en vivo) y checklist de calidad (URL accesible, contenido funcional, configuración de variables de entorno si aplica, material de proceso). Tiempo de trabajo autónomo.</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">N/A</p>
+              </div>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 2 — Iteración</h3>
+              <p class="step-instructions">Proyectar Diapositiva 9. Pide una mejora concreta basada en los criterios del marco.</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Antes de cerrar: valida que tu URL sea pública y que el contenido funcione correctamente. Si no es así, depura los logs de despliegue o revisa tu configuración de variables de entorno.</p>
+              </div>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 3 — Evidencia</h3>
+              <p class="step-instructions">Proyectar Diapositiva 10. Solicita evidencia: URL pública del proyecto desplegado y el material de proceso (ej. QR, anuncio, guía).</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Entrega con nombre: M21_Despliegue_[Equipo/Nombre]. Incluye la URL de tu proyecto desplegado y cualquier material de proceso que hayas creado.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5) GNIUS STORM -->
+      <section class="activity-card" id="activity-5">
+        <h2 class="activity-title">GNIUS STORM</h2>
+        <p class="activity-purpose">Exhibir resultados y cerrar con síntesis accionable.</p>
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 1 — Showcase relámpago</h3>
+              <p class="step-instructions">2–3 presentaciones de 30–45 s, centradas en evidencia y criterio.</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Enfoca tu presentación en la URL pública, la funcionalidad clave de tu proyecto desplegado y la plataforma que usaste.</p>
+              </div>
+            </div>
+          </article>
+          <article class="step-card">
+            <div class="step-content">
+              <h3 class="step-title">Paso 2 — Cierre ejecutivo</h3>
+              <p class="step-instructions">Proyectar Diapositiva 11. Síntesis: 1 aprendizaje, 1 criterio de mayor impacto y 1 siguiente paso fuera del aula.</p>
+            </div>
+            <div class="collapsible">
+              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+              <div class="collapsible-content">
+                <p class="dialogue assistant">Síntesis: Hoy aprendimos que el despliegue es fundamental para la visibilidad del software. Criterio clave: La accesibilidad global y la seguridad de las variables de entorno. Siguiente paso aplicado: Mantener y actualizar tu proyecto desplegado, o explorar opciones de monitoreo de rendimiento.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
   <script src="script.js"></script>
 </body>
-
 </html>
