@@ -1,302 +1,433 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Playbook — 3º Preparatoria — Misión M21: ¡A Producción! Despliegue en la Web</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-S3-TM21</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1><span class="book-icon">📋</span> <strong>Playbook Misión M21: ¡A Producción! Despliegue en la Web</strong></h1>
-    <div class="header-widgets">
-      <div class="timer-container">
-        <span id="timer">⏱️ 00:00</span>
-        <button id="startStop">Start</button>
-        <button id="reset">Reset</button>
-      </div>
-      <div class="theme-toggle">
-        <i class="fas fa-sun"></i>
-        <label class="switch">
-          <input type="checkbox" id="theme-toggle-input">
-          <span class="slider round"></span>
-        </label>
-        <i class="fas fa-moon"></i>
-      </div>
+    <header>
+        <h1><span class="book-icon">📋</span> <strong>Playbook: Misión 21 - 3o de Preparatoria</strong></h1>
+        <div class="header-widgets">
+            <div class="timer-container">
+                <span id="global-timer">⏱️ 40:00</span>
+                <button id="global-start-stop">Start</button>
+                <button id="global-reset">Reset</button>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <aside class="activity-list">
+            <h2>Actividades</h2>
+            <ul>
+                <li><a href="#activity-0">📝</a></li>
+                <li><a href="#activity-1">1</a></li>
+                <li><a href="#activity-2">2</a></li>
+                <li><a href="#activity-3">3</a></li>
+                <li><a href="#activity-4">4</a></li>
+                <li><a href="#activity-5">5</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <!-- ACTIVIDAD 0: DE UN VISTAZO -->
+            <div class="activity-card" id="activity-0">
+                <h2><span class="book-icon">📝</span> De un Vistazo: Comando Central</h2>
+                <p class="overview-subtitle">Todo lo que necesitas para preparar y ejecutar esta misión en minutos.</p>
+                
+                <div class="command-section">
+                    <h3>🎯 Objetivo de Aprendizaje</h3>
+                    <div class="objective-box">
+                        <p><strong>Los estudiantes podrán:</strong> usar GitHub Pages, Replit o Bolt.new para desplegar aplicaciones y configurar variables de entorno para publicar sus proyectos de forma segura y comprender la responsabilidad de publicar y la seguridad de credenciales.</p>
+                    </div>
+                </div>
+                <div class="command-section xolo-prompt">
+                    <h3>🤖 Prompt de Referencia para XOLO (Solo para Maestro)</h3>
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">⚠️ NOTA: XOLO ya conoce el tema de esta misión. Este prompt es SOLO de referencia en caso de emergencia técnica:</span>
+                            <button class="copy-btn" onclick="copyPrompt('main-prompt')">
+                                <i class="fas fa-copy"></i> Copiar
+                            </button>
+                        </div>
+                        <pre id="main-prompt">Explícame qué implica pasar “a producción” y qué diferencias hay entre desplegar un frontend estático (GitHub Pages) y un backend (Replit o Bolt.new). Analicemos por qué las variables de entorno existen y cómo evitan exponer claves en repos públicos. Guíame a elegir la ruta de despliegue adecuada para mi producto y a validar que la URL final funciona.</pre>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>⚡ Puntos Esenciales de la Misión</h3>
+                    <div class="essentials-grid">
+                        <div class="essential-card">
+                            <div class="essential-icon">🎓</div>
+                            <h4>Concepto Clave</h4>
+                            <p>Paso a Producción: Es el momento en que lanzas tu proyecto al mundo real para que cualquier persona con internet pueda usarlo, como cuando una tienda abre sus puertas al público.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🔧</div>
+                            <h4>Habilidad Técnica</h4>
+                            <p>Usar plataformas de despliegue para publicar una página web o aplicación y que sea accesible mediante una URL.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🧪</div>
+                            <h4>Experimentación</h4>
+                            <p>Probar con diferentes configuraciones de visibilidad y variables de entorno para entender limitaciones.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">💬</div>
+                            <h4>Interacción con XOLO</h4>
+                            <p>XOLO ya conoce a cada estudiante y el tema de hoy. Solo abren el chat y comienzan a aprender. Tú guías el timing y motivación.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>📦 Checklist de Materiales</h3>
+                    <div class="materials-checklist">
+                        <label><input type="checkbox"> Proyector/pantalla + presentación (5 diapositivas)</label>
+                        <label><input type="checkbox"> Internet estable + Gnius Space con XOLO activo</label>
+                        <label><input type="checkbox"> Computadora o Laptop (1 por cada 2 estudiantes)</label>
+                        <label><input type="checkbox"> Acceso a GitHub (https://github.com/), WebWave y JDoodle</label> <label><input type="checkbox"> Acceso a ChatGPT, Gemini o Claude</label>
+                        <label><input type="checkbox"> Cuenta activa en plataformas de despliegue (Replit o Bolt.new)</label>
+                        <label><input type="checkbox"> ⚠️ Esta misión usa programación con CÓDIGO en diversas plataformas</label>
+                        <label><input type="checkbox"> 📋 Para desplegar: Seguir los pasos de configuración en GitHub Pages o Replit según el proyecto.</label>
+                    </div>
+                    <p class="care-reminder"><strong>🛡️ Cuidado del equipo:</strong> Mantener la seguridad de tus cuentas y contraseñas, no compartir claves privadas y cerrar sesión al terminar.</p>
+                </div>
+                <div class="command-section">
+                    <h3>🗓️ Secuencia de la Misión (40 min)</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">1</div>
+                            <div class="timeline-content">
+                                <strong>Intro a la Misión</strong>
+                                <span class="time-badge">2 min</span>
+                                <p>Bienvenida, I Can Statement y contexto de la misión.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-content">
+                                <strong>A.I. Gym</strong>
+                                <span class="time-badge">8 min</span>
+                                <p>Los estudiantes abren el chat con XOLO y aprenden sobre el paso a producción y seguridad de credenciales (sin prompt específico).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-content">
+                                <strong>Brain Spark</strong>
+                                <span class="time-badge">20 min</span>
+                                <p>Idear, construir y experimentar un programa con XOLO.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">4</div>
+                            <div class="timeline-content">
+                                <strong>Gnius STORM - Compartir</strong>
+                                <span class="time-badge">5 min</span>
+                                <p>Demostración y reflexión en parejas.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">5</div>
+                            <div class="timeline-content">
+                                <strong>Entrega de Evidencias</strong>
+                                <span class="time-badge">5 min</span>
+                                <p>Subir capturas a Gnius Space y finalizar misión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>🚨 Resolución Rápida de Problemas</h3>
+                    <div class="troubleshooting-list">
+                        <ul>
+                            <li><strong>Si los alumnos no pueden ingresar a Gnius Space:</strong> Activa XOLO SOS en <a href="https://xolo.gnius.club" target="_blank">xolo.gnius.club</a> para continuar la misión sin interrumpir la clase.</li>
+                            <li><strong>Si el sitio muestra un error 404:</strong> Verificar que el nombre del archivo principal sea index.html y que la rama de despliegue en GitHub sea la correcta.</li><li><strong>Si las variables de entorno no cargan:</strong> Revisar que los nombres en el código coincidan exactamente con los configurados en la plataforma de despliegue.</li><li><strong>Si hay errores en el código:</strong> Recordar a los estudiantes que XOLO puede ayudar a depurar. Pídeles que copien el error y se lo muestren a XOLO.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 1: INTRO A LA MISIÓN -->
+            <div class="activity-card" id="activity-1">
+                <div class="activity-header">
+                    <h2>🚀 Actividad 1: Intro a la Misión</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 2:00</span>
+                        <button class="timer-start-btn" data-duration="120">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Dar la bienvenida con energía.</li>
+                            <li>Pedir a los alumnos que ingresen a Gnius Space.</li>
+                            <li>Proyecta diapositiva 1 con el I Can Statement.</li>
+                            <li>Motiva: "¡Hoy lanzaremos sus creaciones al mundo real!".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <ul>
+                            <li>XOLO ya está listo y conoce a cada estudiante.</li>
+                            <li>Sabe que hoy toca aprender sobre Despliegue y Seguridad en Producción.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Escucha la misión del día.</li>
+                            <li>Loguearse en Gnius Space.</li>
+                            <li>Preparación para trabajar en parejas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 1: I Can Statement</h4>
+                    <div class="slide-content">
+                        <p><strong>🎯 Hoy seré capaz de:</strong></p>
+                        <p class="highlight-text">🤖 A publicar proyectos en la web para que el mundo pueda usarlos.</p>
+                        <p><strong>Aplicación real:</strong> Los desarrolladores profesionales en empresas tecnológicas usan esta tecnología para lanzar apps como Instagram o Spotify al público.</p>
+                        <p><strong>Tu aliado:</strong> XOLO ya sabe qué vas a aprender hoy. ¡Solo abre el chat y comienza!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 2: A.I. GYM -->
+            <div class="activity-card" id="activity-2">
+                <div class="activity-header">
+                    <h2>🧠 Actividad 2: A.I. Gym</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 8:00</span>
+                        <button class="timer-start-btn" data-duration="480">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta diapositiva 2.</li>
+                            <li>Indica: "Abran el chat con XOLO y salúdenlo. Él ya sabe qué les va a enseñar hoy."</li>
+                            <li>Circula para asegurar que todos interactúan con XOLO.</li>
+                            <li>Si alguien tiene dudas, recuérdale: "Pregúntale a XOLO, él te puede explicar de otra forma".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ XOLO ACTIVO</p>
+                        <ul>
+                            <li>Reconoce al estudiante y sus preferencias de aprendizaje.</li>
+                            <li>Explica cómo funciona el despliegue de aplicaciones y la diferencia entre frontend y backend.</li>
+                            <li>Introduce el concepto de variables de entorno y por qué son vitales para la seguridad.</li>
+                            <li>Responde dudas sobre los conceptos.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Abrir el chat con XOLO y saludarlo.</li>
+                            <li>Aprender a usar plataformas de despliegue para publicar su trabajo.</li>
+                            <li>Aprender sobre la importancia de no exponer claves en repositorios públicos.</li>
+                            <li>Despejar todas sus dudas preguntando a XOLO.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 2: A.I. GYM</h4>
+                    <div class="slide-content">
+                        <p><strong>💬 Abre el chat con XOLO y salúdalo:</strong></p>
+                        <div class="prompt-box">
+                            <pre>"¡Hola XOLO! Estoy listo para aprender."</pre>
+                        </div>
+                        <p class="highlight-text" style="margin-top: 1rem;">✨ XOLO ya sabe quién eres y qué tema toca hoy. ¡Solo empieza a conversar!</p>
+                        <p class="highlight-text">🎯 Objetivo: Aprender a usar herramientas de despliegue para publicar proyectos y entender la seguridad en producción.</p>
+                    </div>
+                </div>
+                
+                <div class="optional-script">
+                    <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
+                    <div class="collapsible-content">
+                        <p class="dialogue assistant">Ahora vamos a dar el paso más emocionante: ¡llevar sus proyectos al mundo real! Abran el chat con XOLO y salúdenlo. XOLO ya los conoce y sabe exactamente qué les va a enseñar hoy sobre el 'paso a producción'. No necesitan escribir un prompt especial, solo empiecen a platicar con él. Él les explicará por qué es diferente subir una página estática a GitHub que una aplicación completa, y lo más importante: cómo mantener sus secretos y claves seguros usando variables de entorno. ¡Pregúntenle todo lo que necesiten!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 3: BRAIN SPARK -->
+            <div class="activity-card" id="activity-3">
+                <div class="activity-header">
+                    <h2>💡 Actividad 3: Brain Spark</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 20:00</span>
+                        <button class="timer-start-btn" data-duration="1200">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta la diapositiva 3.</li>
+                            <li>Indica: "Pidan a XOLO que los ayude a idear un proyecto. Cuando tengan su GCS, pásenlo a bloques en MakeCode, prueben en el simulador y luego con el hardware real".</li>
+                            <li>Entrega por parejas los proyectos digitales conforme los alumnos prueben su GCS en el simulador.</li>
+                            <li>Si hay errores, recuerda: "Pregúntenle a XOLO, él los ayuda a depurar".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ XOLO ACTIVO</p>
+                        <ul>
+                            <li>Ayuda a desarrollar una idea y un VIBE que aplique el despliegue seguro de su producto.</li>
+                            <li>Entrega el GCS de la idea del genio.</li>
+                            <li>Resuelve errores de sintaxis o lógica.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Trabajar con XOLO una idea y un VIBE para publicar su proyecto final.</li>
+                            <li>Traducir el GCS de XOLO a bloques en MakeCode.</li>
+                            <li>Depurar su programa con XOLO si hay errores.</li>
+                            <li>Configurar las variables de entorno y probar la URL pública.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 3: Brain Spark</h4>
+                    <div class="slide-content">
+                        <p><strong>1. 💬 Pide a XOLO que te ayude a crear:</strong></p>
+                        <div class="prompt-box">
+                            <pre>"Ayúdame a publicar mi trabajo con Vibe Coding: decide conmigo qué desplegar (componente frontend, prototipo full-stack simulado o portafolio). Guíame paso a paso para desplegarlo en la plataforma correcta y a comprobar que funciona desde un dispositivo distinto. Ejecuta: entrega la URL pública final y crea un QR que apunte a ella (más una mini guía de 5 pasos de cómo lo desplegaste)."</pre>
+                        </div>
+                        <p style="margin-top: 1.5rem;"><strong>2. 🔬 Experimenta y descubre con tu programa:</strong></p>
+                        <ul>
+                            <li>¿La URL de tu proyecto carga correctamente en tu navegador?</li>
+                            <li>¿Qué sucede si intentas acceder a la URL desde una ventana de incógnito o un celular?</li>
+                            <li>¿Funciona igual el despliegue si cambias un archivo en el repositorio de GitHub?</li>
+                            <li>¿Por qué es una gran responsabilidad publicar contenido en la web y qué medidas tomaste para ser responsable?</li>
+                            <li>Si tuvieras una clave secreta de API, ¿cómo te aseguras de que nadie más la vea al publicar tu código?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="optional-script">
+                    <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
+                    <div class="collapsible-content">
+                        <p class="dialogue assistant">¡Es hora de crear y lanzar! Vamos a pasar de la idea al despliegue real. El flujo es simple: platiquen con XOLO para decidir qué van a publicar, definan el VIBE de su proyecto y obtengan su GCS. Luego, sigan los pasos para subirlo a GitHub Pages o Replit. Imaginen que están lanzando su propio portafolio profesional o una herramienta útil para su comunidad. Una vez que tengan su URL pública, generen un código QR para que cualquiera pueda entrar. Si tienen errores o dudas al configurar el despliegue, pregúntenle a XOLO, él los ayudará a depurar y a que su sitio se vea increíble en cualquier dispositivo.</p>
+                    </div>
+                </div>
+                <div class="challenge-prompt">
+                    <h4>🚀 Prompt de Desafío (para quienes terminen rápido)</h4>
+                    <div class="prompt-box">
+                        <p><strong>Si ya experimentaste con todo, pregunta a XOLO:</strong></p>
+                        <p class="challenge-text">"Ya probé con el despliegue básico. ¿Puedes enseñarme cómo hacer que mi proyecto use un dominio personalizado o configurar un flujo de integración continua (CI/CD)?"</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 4: GNIUS STORM - COMPARTIR -->
+            <div class="activity-card" id="activity-4">
+                <div class="activity-header">
+                    <h2>⚡ Actividad 4: Gnius STORM - Compartir y Reflexionar</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 5:00</span>
+                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Organiza las parejas para compartir.</li>
+                            <li>Gestiona los tiempos: 2 min demo + 2 min reflexión + 1 min cierre.</li>
+                            <li>Facilita retroalimentación constructiva.</li>
+                            <li>Cierra con reflexión sobre aplicaciones reales.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">⏸️ XOLO EN ESPERA</p>
+                        <ul>
+                            <li>Disponible solo si hay dudas finales urgentes.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Demuestra su programa funcionando a otra pareja.</li>
+                            <li>Explica qué configuraciones de seguridad funcionaron bien.</li>
+                            <li>Comparte un descubrimiento interesante.</li>
+                            <li>Da retroalimentación positiva al compañero.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 4: Think-Pair-Share</h4>
+                    <div class="slide-content tps-structure">
+                        <div class="tps-phase">
+                            <h4>🤔 THINK (30 seg)</h4>
+                            <p>Reflexión individual: ¿Qué plataformas de despliegue funcionaron mejor para tu proyecto? ¿Qué te sorprendió del proceso?</p>
+                        </div>
+                        <div class="tps-phase">
+                            <h4>👥 PAIR (2 min)</h4>
+                            <p>Con otra pareja: Demuestren su programa y expliquen su experiencia</p>
+                            <p class="highlight-text">Frase guía: "Mi proyecto se desplegó en GitHub/Replit. Me sorprendió que fuera tan sencillo/complejo configurar las variables de entorno."</p>
+                        </div>
+                        <div class="tps-phase">
+                            <h4>💬 SHARE (2 min)</h4>
+                            <p>Retroalimentación mutua y cierre del maestro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 5: ENTREGA DE EVIDENCIAS -->
+            <div class="activity-card" id="activity-5">
+                <div class="activity-header">
+                    <h2>✅ Actividad 5: Entrega de Evidencias</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 5:00</span>
+                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta diapositiva 5 con las instrucciones.</li>
+                            <li>Guía a los estudiantes para tomar las capturas.</li>
+                            <li>Asegura que todos suban sus evidencias a Gnius Space.</li>
+                            <li>Felicita al grupo por completar la misión.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">⭕ XOLO FINALIZADO</p>
+                        <ul>
+                            <li>La interacción con XOLO ha terminado para esta misión.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Tomar screenshot de su código en MakeCode.</li>
+                            <li>Tomar screenshot de su conversación con XOLO.</li>
+                            <li>Subir ambas evidencias a Gnius Space.</li>
+                            <li>Dar click en "Finalizar Misión".</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 5: ¡Misión Cumplida!</h4>
+                    <div class="slide-content">
+                        <p><strong>📸 Para terminar, sube tus evidencias a Gnius Space:</strong></p>
+                        <ol>
+                            <li>Una captura de pantalla de tu programa final en <strong>MakeCode</strong>.</li>
+                            <li>Una captura de pantalla de tu conversación con <strong>XOLO</strong> donde te dio tu GCS.</li>
+                        </ol>
+                        <p class="highlight-text" style="margin-top: 1rem;">¡No olvides dar click en el botón <strong>"Finalizar Misión"</strong> cuando termines!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </header>
-  <div class="main-container">
-    <aside class="activity-list">
-      <h2>Actividades</h2>
-      <ul>
-        <li><a href="#activity-0">📝</a></li>
-        <li><a href="#activity-1">1</a></li>
-        <li><a href="#activity-2">2</a></li>
-        <li><a href="#activity-3">3</a></li>
-        <li><a href="#activity-4">4</a></li>
-        <li><a href="#activity-5">5</a></li>
-      </ul>
-      <div class="sidebar-info">
-        <p>💡 Esta misión se enfoca en el despliegue de software para hacerlo público.</p>
-        <p>⏱️ Se proporcionan estimaciones de tiempo para cada actividad para ayudarle a mantener el rumbo.</p>
-      </div>
-    </aside>
-    <main class="content">
-      <div class="progress-bar">
-        <div class="progress"></div>
-      </div>
-      <button id="toggle-dialogues">Mostrar todos los diálogos</button>
-
-      <!-- 0) De un Vistazo -->
-      <section class="activity-card" id="activity-0">
-        <h2 class="activity-title">📝 De un Vistazo: Misión M21: ¡A Producción! Despliegue en la Web</h2>
-        <p class="activity-purpose">Resumen de objetivos, secuencia y entregables.</p>
-        <div class="overview-table-container">
-          <table>
-            <thead>
-              <tr>
-                <th style="width: 50%;">Objetivos, Tácticas y Entregable</th>
-                <th style="width: 50%;">Materiales Específicos y Preparación Previa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h3>Objetivos e “I Can”</h3>
-                  <ul>
-                    <li>Puedo explicar las opciones de despliegue de software (frontend y backend) y su importancia para la accesibilidad global.</li>
-                    <li>Puedo desplegar una aplicación web funcional en una plataforma pública, gestionando variables de entorno y asegurando su accesibilidad.</li>
-                  </ul>
-                  <h3>Secuencia y tiempos</h3>
-                  <ol>
-                    <li>Saludo Interactivo con IA — 3 min</li>
-                    <li>“I Can” + Desafío — 5–7 min</li>
-                    <li>AI GYM — 10–12 min</li>
-                    <li>Brain Spark — 17–20 min</li>
-                    <li>GNIUS STORM — 5 min</li>
-                  </ol>
-                  <h3>Entregable del Micro-Proyecto</h3>
-                  <ul>
-                    <li>URL pública de una aplicación o página de perfil simple desplegada en vivo (componente frontend, proyecto full-stack simulado, o portafolio).</li>
-                    <li>Material de proceso (ej. código QR a la URL, anuncio de lanzamiento, guía paso a paso del despliegue).</li>
-                  </ul>
-                </td>
-                <td>
-                  <h3>Criterios de calidad</h3>
-                  <ul>
-                    <li>Accesibilidad pública de la URL.</li>
-                    <li>Funcionalidad básica del contenido desplegado.</li>
-                    <li>Uso adecuado de la plataforma de despliegue (GitHub Pages, Replit, Bolt.new).</li>
-                    <li>Consideración de seguridad (variables de entorno no expuestas).</li>
-                    <li>Claridad en la documentación del proceso de despliegue.</li>
-                  </ul>
-                  <h3>Materiales y preparación</h3>
-                  <ul>
-                    <li>Proyector e internet</li>
-                    <li>GitHub Pages / Replit / Bolt.new (o similar)</li>
-                    <li>Repositorio de código (frontend o full-stack) listo para desplegar.</li>
-                    <li>Ejemplo mínimo listo de URL pública desplegada.</li>
-                  </ul>
-                  <h3>Preparación previa</h3>
-                  <ol>
-                    <li>Verificar acceso y funcionalidad de las plataformas de despliegue.</li>
-                    <li>Tener un proyecto de ejemplo listo para una demostración rápida.</li>
-                    <li>Asegurar que los estudiantes tengan cuentas en las plataformas relevantes o acceso a repositorios.</li>
-                  </ol>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- 1) Saludo Interactivo con IA -->
-      <section class="activity-card" id="activity-1">
-        <h2 class="activity-title">Saludo Interactivo con IA</h2>
-        <p class="activity-purpose">Enmarcar el foco en el despliegue de software y activar a Xolo con perfil/intereses.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Bienvenida y foco</h3>
-              <p class="step-instructions">Proyectar Diapositiva 2. Presenta el tema y su valor profesional (Columna 1).</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Equipo: hoy llevaremos nuestros proyectos al mundo real. La misión es el despliegue: hacer que su trabajo sea público y accesible. Esto es crucial para la visibilidad y el impacto de cualquier aplicación de IA o full-stack.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Activación con Xolo</h3>
-              <p class="step-instructions">Cada estudiante envía a Xolo: “Hola Xolo, soy [Nombre], perfil [X]; me interesa [Y]. Misión M21: ¡A Producción! Despliegue en la Web. Necesito foco en [marco/herramienta].”</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Activen a Xolo con su perfil e intereses. Confirmen que comprendieron el criterio de hoy y sigan sus indicaciones personalizadas, enfocándose en la importancia del despliegue y las plataformas como GitHub Pages o Replit.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- 2) “I Can” + Desafío -->
-      <section class="activity-card" id="activity-2">
-        <h2 class="activity-title">“I Can Statement” + Desafío</h2>
-        <p class="activity-purpose">Alinear expectativas y definir el reto práctico de hacer un proyecto accesible globalmente.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Presenta el reto</h3>
-              <p class="step-instructions">Proyectar Diapositiva 3. Describe el reto y la meta observable (Columnas 1 y 3).</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">El reto es convertir su proyecto en una URL pública. Evaluaremos la accesibilidad, funcionalidad y la correcta aplicación de las prácticas de despliegue.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Escribe tu “I Can”</h3>
-              <p class="step-instructions">Proyectar Diapositiva 4. Cada estudiante redacta 1 “I Can” alineado al entregable (Columna 2).</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Formula tu “Puedo…” en 1 frase: acción + criterio + resultado. Ej.: “Puedo desplegar [mi proyecto] usando [GitHub Pages/Replit] para lograr [una URL pública funcional].”</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- 3) AI GYM -->
-      <section class="activity-card" id="activity-3">
-        <h2 class="activity-title">AI GYM</h2>
-        <p class="activity-purpose">Formalizar el marco/técnica/herramienta central de la sesión: el despliegue de software.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Marco del día</h3>
-              <p class="step-instructions">Proyectar Diapositiva 5. Introduce el marco: Despliegue de Software (GitHub Pages, Replit, Bolt.new).</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Hoy nos enfocamos en el despliegue, el último paso para que su proyecto sea visible. Eviten errores como exponer claves de API en el código público o no configurar un proceso de 'build' adecuado. Usen las plataformas de despliegue para validar resultados.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Mini-demostración</h3>
-              <p class="step-instructions">Proyectar Diapositiva 6. Construye un ejemplo mínimo de despliegue de una aplicación simple.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Observa cómo un proyecto simple pasa de ser local a una URL pública. Verifiquen con: ¿Es accesible desde cualquier dispositivo? ¿Funciona como se espera?</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 3 — Check rápido</h3>
-              <p class="step-instructions">Proyectar Diapositiva 7. Verifica comprensión con 2 preguntas breves.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Pregunta 1: ¿Por qué es importante el despliegue? Pregunta 2: Menciona una plataforma de despliegue para frontend y una para backend.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- 4) Brain Spark -->
-      <section class="activity-card" id="activity-4">
-        <h2 class="activity-title">Brain Spark</h2>
-        <p class="activity-purpose">Producir el entregable tangible del Micro-Proyecto: la URL pública de un proyecto.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Producción</h3>
-              <p class="step-instructions">Proyectar Diapositiva 8. Indica el producto específico (URL pública de una aplicación o página de perfil simple desplegada en vivo) y checklist de calidad (URL accesible, contenido funcional, configuración de variables de entorno si aplica, material de proceso). Tiempo de trabajo autónomo.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">N/A</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Iteración</h3>
-              <p class="step-instructions">Proyectar Diapositiva 9. Pide una mejora concreta basada en los criterios del marco.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Antes de cerrar: valida que tu URL sea pública y que el contenido funcione correctamente. Si no es así, depura los logs de despliegue o revisa tu configuración de variables de entorno.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 3 — Evidencia</h3>
-              <p class="step-instructions">Proyectar Diapositiva 10. Solicita evidencia: URL pública del proyecto desplegado y el material de proceso (ej. QR, anuncio, guía).</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Entrega con nombre: M21_Despliegue_[Equipo/Nombre]. Incluye la URL de tu proyecto desplegado y cualquier material de proceso que hayas creado.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- 5) GNIUS STORM -->
-      <section class="activity-card" id="activity-5">
-        <h2 class="activity-title">GNIUS STORM</h2>
-        <p class="activity-purpose">Exhibir resultados y cerrar con síntesis accionable.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Showcase relámpago</h3>
-              <p class="step-instructions">2–3 presentaciones de 30–45 s, centradas en evidencia y criterio.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Enfoca tu presentación en la URL pública, la funcionalidad clave de tu proyecto desplegado y la plataforma que usaste.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Cierre ejecutivo</h3>
-              <p class="step-instructions">Proyectar Diapositiva 11. Síntesis: 1 aprendizaje, 1 criterio de mayor impacto y 1 siguiente paso fuera del aula.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Síntesis: Hoy aprendimos que el despliegue es fundamental para la visibilidad del software. Criterio clave: La accesibilidad global y la seguridad de las variables de entorno. Siguiente paso aplicado: Mantener y actualizar tu proyecto desplegado, o explorar opciones de monitoreo de rendimiento.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-  </div>
-  <script src="script.js"></script>
+      <script src="script.js"></script>
 </body>
-</html>
+</html></html>
